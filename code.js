@@ -1,8 +1,13 @@
+let oldUserQuestions = [];
+
 function magicEightBall() {
     // old code with username
     // let userName = document.getElementById("name").value;           
     let userQuestion = document.getElementById("question").value;
-    if (userQuestion) { 
+    
+    if (oldUserQuestions.includes(userQuestion)) {
+        alert("You already asked that!");
+    } else if (userQuestion) { 
         let randomNumber = Math.floor(Math.random() * 8);
         let eightBallAns = '';
         switch (randomNumber) {
@@ -46,6 +51,10 @@ function magicEightBall() {
         // old code with alert and username
         // userName ? alert(`Hello, ${userName}!\nYou asked: ${userQuestion}\nI say ${eightBallAns}`) : alert(`Hello, stranger! \nYou asked: ${userQuestion}\nI say ${eightBallAns}`);
         
+        // remember userQuestion for cheaters
+        oldUserQuestions.push(userQuestion);
+
+
     } else {
         alert("You have to ask a question first");
     }

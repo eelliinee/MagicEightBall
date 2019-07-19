@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Magic Eight Ball</title>
+        <title>Magic 8-Ball</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
-        <h1>Magic Eight Ball</h1>
+      <div id="wrapper">
+        <h1>Magic 8-Ball</h1>
+        <div id="eightBall">
+          <p id="eightBallAnswer"> </p>
+        </div>
         <form>
-            <label for="name">What's your name?</label><br>
-            <input type="text" id="name" autocomplete="off"/><br>
+            <!-- <label for="name">What's your name?</label><br>
+            <input type="text" id="name" autocomplete="off"/><br> -->
             <label for="question">What would you like to ask?</label><br>
             <input type="text" id="question" autocomplete="off"/><br>
-            <input type="button" onclick="magicEightBall()" value="Ready? Click here!">
+            <input type="button" onclick="magicEightBall()" value="Answer my question">
         </form>
-
+      </div>
         <script src="code.js"></script>
     </body>
 </html>

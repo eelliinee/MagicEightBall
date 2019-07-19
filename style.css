@@ -1,0 +1,26 @@
+#wrapper {
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+#eightBall {
+    display: block;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    background: url("magic_8_ball-8.png") no-repeat center;
+}
+
+.answer {
+    background: url("magic_8_ball-answer-empty.png") no-repeat center !important;
+    position: relative;
+}
+
+#eightBallAnswer {
+    color: rgb(28,159,221);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

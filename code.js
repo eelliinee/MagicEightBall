@@ -1,37 +1,50 @@
 function magicEightBall() {
-    let userName = document.getElementById("name").value;           
+    // old code with username
+    // let userName = document.getElementById("name").value;           
     let userQuestion = document.getElementById("question").value;
     if (userQuestion) { 
         let randomNumber = Math.floor(Math.random() * 8);
-        let eightBall = '';
+        let eightBallAns = '';
         switch (randomNumber) {
           case 0:
-            eightBall = 'it is certain';
+            eightBallAns = 'it is certain';
             break;
           case 1:
-            eightBall = 'it is decidedly so';
+            eightBallAns = 'it is decidedly so';
             break;
           case 2:
-            eightBall = 'try again';
+            eightBallAns = 'try again';
             break;
           case 3:
-            eightBall = 'cannot predict now';
+            eightBallAns = 'cannot predict now';
             break;
           case 4:
-            eightBall = 'do not count on it';
+            eightBallAns = 'do not count on it';
             break;
           case 5:
-            eightBall = 'my sources say no';
+            eightBallAns = 'my sources say no';
             break;
           case 6:
-            eightBall = 'outlook not so good';
+            eightBallAns = 'outlook not so good';
             break;
           case 7:
-            eightBall = 'signs point to yes';
+            eightBallAns = 'signs point to yes';
             break;
         }
         
-        userName ? alert(`Hello, ${userName}!\nYou asked: ${userQuestion}\nI say ${eightBall}`) : alert(`Hello, stranger! \nYou asked: ${userQuestion}\nI say ${eightBall}`);
+        var eightBallDiv = document.getElementById("eightBall");
+
+
+        //change 8-ball to answer-side
+        eightBallDiv.setAttribute("class", "answer");
+
+        // replace answertext in 8-ball
+        var answernode = document.createTextNode(eightBallAns);
+        var answerP = document.getElementById("eightBallAnswer");
+        answerP.replaceChild(answernode, answerP.childNodes[0]);
+
+        // old code with alert and username
+        // userName ? alert(`Hello, ${userName}!\nYou asked: ${userQuestion}\nI say ${eightBallAns}`) : alert(`Hello, stranger! \nYou asked: ${userQuestion}\nI say ${eightBallAns}`);
         
     } else {
         alert("You have to ask a question first");
